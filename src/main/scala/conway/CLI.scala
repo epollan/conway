@@ -9,10 +9,10 @@ object CLI extends App {
 
 	// Defaults
 	var printer: Printer = new ConsolePrinter()
-	var turns = 1000
-	var sleep: Long = 250
-	var rows = 10
-	var columns = 30
+	var turns = 250
+	var sleep: Long = 20
+	var rows = 30
+	var columns = 40
 	var creatures = Set(
 		Creature(0, 9),
 		Creature(0, 10),

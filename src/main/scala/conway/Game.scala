@@ -3,6 +3,9 @@ package conway
 import scala.collection.immutable
 import scala.collection.mutable
 
+/**
+ * A Conway's Game of Life coordinator, capable of dealing with boards of size rows x columns.
+ */
 class Game(rows: Int, columns: Int) {
 
 	private val neighborOffsets: Set[(Int, Int)] = immutable.Set(

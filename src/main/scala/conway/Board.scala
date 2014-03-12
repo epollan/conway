@@ -1,6 +1,9 @@
 package conway
 
 
+/**
+ * Simple GoL board state representation
+ */
 case class Board(rows: Int, columns: Int, creatures: Set[Creature]) {
 
 	// secondary "index" of creatures for optimized containment lookup
