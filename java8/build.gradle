@@ -1,0 +1,43 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+version = '1.0'
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            name "Shadow"
+            url "http://dl.bintray.com/content/johnrengelman/gradle-plugins"
+        }
+    }
+    dependencies {
+        classpath "org.gradle.plugins:shadow:0.7.4"
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: "com.google.guava", name: "guava", version: "16.0.1"
+    testCompile group: "org.testng", name: "testng", version: "6.8.7"
+}
+
+apply plugin: "shadow"
+shadow {
+    outputFile new File(new File(buildDir, "libs"), "conway-java8.jar")
+    exclude "META-INF/*.SF"
+    exclude "META-INF/*.DSA"
+    exclude "META-INF/*.RSA"
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "conway.java.CLI"
+    }
+}
+
+tasks.getByName("shadow").dependsOn("build")

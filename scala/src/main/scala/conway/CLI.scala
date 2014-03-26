@@ -1,9 +1,9 @@
 package conway
 
-import com.google.common.io.Files
-import java.io.File
-import com.google.common.base.Charsets
 import java.util.concurrent.atomic.AtomicInteger
+import java.io.File
+import com.google.common.io.Files
+import com.google.common.base.Charsets
 
 object CLI extends App {
 

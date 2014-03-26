@@ -1,0 +1,10 @@
+#!/bin/bash
+
+DIR=`dirname $0`
+
+pushd $DIR &> /dev/null
+./gradlew -q shadow
+popd &> /dev/null
+
+java -jar $DIR/build/libs/conway-java8.jar $@
+

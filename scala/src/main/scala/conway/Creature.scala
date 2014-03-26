@@ -1,8 +1,8 @@
 package conway
 
+import _root_.java.util.regex.Pattern
 import scala.collection.immutable
 import scala.collection.mutable
-import java.util.regex.Pattern
 
 case class Creature(row: Int, column: Int) extends Coordinate
 

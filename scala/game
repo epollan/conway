@@ -2,6 +2,10 @@
 # Hide the details of the one-jar SBT build plug-ins.  Unfortunately, sbt's wrapper script does not
 # seem to be amenable to passing arguments transparently.  IOW, neither `sbt run $@` or `sbt "run $@"` work
 
-sbt one-jar
+DIR=`dirname $0`
 
-java -jar target/scala*/*one-jar.jar $@
+pushd $DIR &> /dev/null
+sbt one-jar
+popd &> /dev/null
+
+java -jar $DIR/target/scala*/*one-jar.jar $@
